@@ -11,22 +11,38 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  width: 100vw;
   font-size: 2rem;
-  position: fixed;
-  top: 275px;
+  padding-top: 70px;
+
 }
 
 .currentScore {
+  display: flex;
+  justify-content: center;
   font-size: 1rem;
-  position: fixed;
-  top: 370px;
+  height: 15vh;
+  width: 100vw;
+  margin: 0px 0px;
 }
-.main button{
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 100vw;
+}
+
+.gameButton{
   font-family: inherit;
   font-size: 1.5rem;
   cursor: pointer;
@@ -104,5 +120,16 @@ body {
 }
 
 .happycharacter.show {
-  display: block
+  display: inline;
+}
+
+@media all and (max-width: 600px) {
+  .character {
+    display: none;
+  }
+
+  .happycharacter {
+    display: none;
+  }
+
 }
