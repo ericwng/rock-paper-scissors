@@ -12,13 +12,23 @@ const winningMessageText = document.querySelector('[data-winning-message-text]')
 
 const restartButton = document.getElementById('restartButton')
 
+const resetButton = document.getElementById('resetButton')
+
 const image = document.getElementById('tofuman')
+
+const counter = document.getElementById('scoreCounter')
+
+const currentScore = document.getElementById('currentScore')
+
+var score = 0;
 
 gameButton.forEach(buttons => {
   buttons.addEventListener('click', handleClick)
 })
 
 restartButton.addEventListener('click', restartGame)
+
+resetButton.addEventListener('click',resetScore)
 
 image.addEventListener('mouseover',hoverImage)
 
@@ -29,15 +39,17 @@ function handleClick(e) {
     var choice = compChoice()
     var results = compileResult(value,choice)
     if (checkWin(results,WINNING_CONDITION)) {
-      console.log('win')
+      var dif = 'win'
       endGame('win')
     } else if (isDraw(results,DRAWING_CONDITION)) {
-      console.log('Draw')
+      var dif = 'draw'
       endGame('draw')
     } else {
-      console.log('lose')
+      var dif = 'lose'
       endGame('lose')
     }
+    score = updateScore(dif,score);
+    currentScore.innerText = `Current Score: ${score}`
     }
 
 function restartGame() {
@@ -61,6 +73,26 @@ function endGame(draw) {
     winningMessageText.innerText = 'You Lose :('
   }
   winningMessageElement.classList.add('show')
+}
+
+function resetScore() {
+  winningMessageElement.classList.remove('show')
+  score = 0;
+  currentScore.innerText = `Current Score: ${score}`
+}
+
+function updateScore(dif,score) {
+  if (dif.localeCompare('win') == 0) {
+    score++
+    counter.innerText = `Your Score: ${score}`
+  } else if (dif.localeCompare('draw') == 0) {
+    score
+    counter.innerText = `Your Score: ${score}`
+  } else {
+    score--
+    counter.innerText = `Your Score: ${score}`
+  }
+  return score;
 }
 
 function compChoice() {

@@ -5,18 +5,23 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <script src="script.js" type="text/javascript" defer>  </script>
-    <title>じゃんけん</title>
+    <title>Rock Paper Scissors</title>
   </head>
   <body>
     <div class="main" id="main">
       <div class="title" id="title">Rock Paper Scissors</div>
+      <div class="currentScore" id="currentScore">Current Score: 0</div>
       <button class="gameButton" id="rockButton" value="rock">Rock</button>
       <button class="gameButton" id="paperButton" value="paper">Paper</button>
       <button class="gameButton" id="scissorsButton" value="scissors">Scissors</button>
     </div>
     <div class="winningMessage" id="winningMessage">
       <div data-winning-message-text></div>
-      <button id="restartButton">Restart</button>
+      <div id ="scoreCounter">Your Current Score:</div>
+      <div class ="buttons">
+      <button id="restartButton">Next Round =></button>
+      <button id="resetButton">Reset Game</button>
+      </div>
     </div>
     <div id="character" class="character"><img src="Untitled.jpg" id="tofuman"></div>
     <div id="happycharacter" class="happycharacter"><img src="Happy.jpg"></div>

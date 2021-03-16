@@ -21,6 +21,11 @@ body {
   top: 275px;
 }
 
+.currentScore {
+  font-size: 1rem;
+  position: fixed;
+  top: 370px;
+}
 .main button{
   font-family: inherit;
   font-size: 1.5rem;
@@ -49,19 +54,19 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.9);
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .winningMessage button{
   font-size: 1.5rem;
   cursor: pointer;
   box-shadow: 0 4px #000;
-  margin: 10px 0px;
+  margin: 40px 10px;
   border: 1px solid black;
   font-family: 'DotGothic16', sans-serif;
   border-radius: 4px;
