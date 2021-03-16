@@ -1,0 +1,103 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  position: fixed;
+  top: 275px;
+}
+
+.main button{
+  font-family: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px #000;
+  margin: 0px 30px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.main button:hover{
+  background: rgba(0,0,0,0.4);
+  color: white;
+}
+
+.main button:active {
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 2px rgba(0,0,0,0.4);
+  transform: translateY(2px);
+}
+
+.winningMessage{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.winningMessage button{
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px #000;
+  margin: 10px 0px;
+  border: 1px solid black;
+  font-family: 'DotGothic16', sans-serif;
+  border-radius: 4px;
+}
+
+.winningMessage button:hover{
+  background: rgba(0,0,0,0.4);
+  color: white;
+}
+
+.winningMessage button:active{
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 2px rgba(0,0,0,0.4);
+  transform: translateY(2px);
+}
+
+.winningMessage.show{
+  display: flex;
+  z-index: 5;
+}
+
+.character {
+  position: fixed;
+  top: 250px;
+  left: 40px;
+  transform: scale(0.5);
+}
+
+.happycharacter {
+  display: none;
+  position: fixed;
+  top: 250px;
+  left: 40px;
+  transform: scale(0.5);
+}
+
+.happycharacter.show {
+  display: block
+}
